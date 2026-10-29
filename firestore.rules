@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/tracker/state {
+      function isOwner() {
+        return request.auth != null
+          && request.auth.uid == 'AO7v3uOOzEcMaGRpPQnKpfNtsm82'
+          && request.auth.uid == userId;
+      }
+      allow read: if isOwner();
+      allow create, update: if isOwner()
+        && request.resource.data.keys().hasOnly(['days'])
+        && request.resource.data.days is map;
+    }
+  }
+}
