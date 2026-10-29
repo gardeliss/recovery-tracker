@@ -5,7 +5,7 @@
 <script>
 'use strict';
 const key='recovery-tracker-v1';
-const activities=[['leg','↑','Πόδι ψηλά'],['ice','❄','Παγοθεραπεία'],['stretch','↔','Άσκηση για να τεντωθεί'],['heel','↗','Έκταση φτέρνας']];
+const activities=[['leg','↑','Πόδι ψηλά'],['ice','❄','Παγοθεραπεία'],['stretch','↔','Άσκηση λιωμένη ντομάτα'],['heel','↗','Έκταση φτέρνας'],['depon','💊','Depon'],['anticoagulant','💉','Αντιπηκτική ένεση']];
 const dateInput=document.querySelector('#day'),cards=document.querySelector('#cards'),status=document.querySelector('#status');
 function localDay(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 let data={};
